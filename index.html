@@ -6,28 +6,46 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <label>Semáforo</label>
-            <div class="traffic-light" id="trafficLight">
-            <div class="red-light"></div>
-            <div class="yellow-light"></div>
-            <div class="green-light"></div>
-        </div>
-    </div>
-    <div class="buttons-container">
-        <label>Modo Automático</label>
-        <button>Cambiar Color</button>
-        <label>Mono Manual</label>
-        <button>Cambiar a Rojo</button>
-        <button>Cambiar a Amarillo</button>
-        <button>Cambiar a Verde</button>
-    </div>
-    <div class="counter-container">
-        <div>
-            <div class="red-counter"></div>
-            <div class="red-label"></div>
-        </div>
-    </div>
-    
+    <main class="main">
+        <section>
+            <h2>Semáforo</h2>
+                <div class="traffic-light" id="trafficLight">
+                <div class="red-light"></div>
+                <div class="yellow-light"></div>
+                <div class="green-light"></div>
+            </div>
+        </section>
+
+        <section class="controls">
+            <div class="button-group">
+                <h2>Modo Automático</h2>
+                <button>Cambiar Color</button>
+            </div>
+            <div>
+                <h2>Mono Manual</h2>
+                <button>Cambiar a Rojo</button>
+                <button>Cambiar a Amarillo</button>
+                <button>Cambiar a Verde</button>
+                <button>Apagar</button>
+            </div>
+            
+        </section>
+
+        <section class="counter-container">
+            <h2>Conteo de Luces</h2>
+            <div class="counter-row">
+                <div class="circle red"></div>
+                <span id="redCount">0 veces</span>
+            </div>
+            <div class="counter-row">
+                <div class="circle yellow"></div>
+                <span id="yellowCount">0 veces</span>
+            </div>
+            <div class="counter-row">
+                <div class="circle green"></div>
+                <span id="greenCount">0 veces</span>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
