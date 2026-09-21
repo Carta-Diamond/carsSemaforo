@@ -3,9 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Semáforo</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <main class="main">
+        <div class="container">
+        <section class="traffic-section">
+            <h2>Semáforo</h2>
+                <div class="traffic-light" id="trafficLight">
+                <div class="red-light"></div>
+                <div class="yellow-light"></div>
+                <div class="green-light"></div>
+            </div>
+        </section>
+
+        <section class="controls">
+            <div class="button-group">
+                <h2>Modo Automático</h2>
+                <button>Cambiar Color</button>
+            </div>
+            <div>
+                <h2>Modo Manual</h2>
+                <button>Cambiar a Rojo</button>
+                <button>Cambiar a Amarillo</button>
+                <button>Cambiar a Verde</button>
+                <button>Apagar</button>
+            </div>
+            
+        </section>
+        </div>
+
+        <section class="counter-container">
+            <h2>Conteo de Luces</h2>
+            <div class="counter-row">
+                <div class="circle red"></div>
+                <span id="redCount">0 veces</span>
+            </div>
+            <div class="counter-row">
+                <div class="circle yellow"></div>
+                <span id="yellowCount">0 veces</span>
+            </div>
+            <div class="counter-row">
+                <div class="circle green"></div>
+                <span id="greenCount">0 veces</span>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
