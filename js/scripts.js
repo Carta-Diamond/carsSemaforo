@@ -3,6 +3,10 @@ const button = document.getElementById('btnAutomatico');
 const rojo = document.getElementById('red-light');
 const amarillo = document.getElementById('yellow-light');
 const verde = document.getElementById('green-light');
+const btnDetener = document.getElementById('btnStop');
+const redCount = document.getElementById('redCount');
+const yellowCount = document.getElementById('yellowCount');
+const greenCount = document.getElementById('greenCount');
 const colores =[verde, amarillo, rojo];
 let actual= 0;
 let temp;
@@ -10,8 +14,19 @@ let temp;
 function mostrarColor() {
     colores.forEach(function(color){
         color.classList.remove('on');
-        });
-        colores[actual].classList.add('on');
+    });
+    colores[actual].classList.add('on');
+
+    if (colores[actual] === rojo) {
+        rCount++;
+        redCount.textContent = rCount + " veces";
+    } else if (colores[actual] === amarillo) {
+        yCount++;
+        yellowCount.textContent = yCount + " veces";
+    } else if (colores[actual] === verde) {
+        gCount++;
+        greenCount.textContent = gCount + " veces";
+    }
 };
 
 function cambiarColor() {
@@ -22,8 +37,16 @@ function cambiarColor() {
     mostrarColor();
 }
 button.addEventListener('click', function() {
-    temp=setInterval(cambiarColor, 1000);
+    if (temp) {
+        clearInterval(temp);
+    }
+    temp = setInterval(cambiarColor, 1000);
 });
+btnDetener.addEventListener('click', function() {
+    clearInterval(temp);
+    temp = undefined;
+});
+
 
 const btnRojo = document.getElementById("red");
 const btnAmarillo = document.getElementById("yellow");
