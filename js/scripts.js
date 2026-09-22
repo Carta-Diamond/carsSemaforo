@@ -103,3 +103,19 @@ btnApagar.addEventListener("click", function(){
     
 })
 
+
+const musica = document.getElementById('musica');
+const btnMusica = document.getElementById('btnMusica');
+let sonando = false;
+
+btnMusica.addEventListener('click', function() {
+    if (sonando) {
+        musica.pause();
+        btnMusica.textContent = '🔇';
+    } else {
+        musica.currentTime = 58.5; 
+        musica.play();
+        btnMusica.textContent = '🔊';
+    }
+    sonando = !sonando;
+});
