@@ -1,0 +1,95 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #eef1f4;
+  font-family: system-ui, sans-serif;
+  color: #1d2733;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+}
+
+h2 { margin: 0 0 12px; font-size: 1.1rem; }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 640px;
+  padding: 28px;
+  background: #fff;
+  border: 2px solid #1d2733;
+  border-radius: 12px;
+}
+
+.traffic-section { flex: 0 0 auto; text-align: center; }
+
+.traffic-light {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: #222;
+  border-radius: 18px;
+}
+
+.red-light, .yellow-light, .green-light {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  opacity: 0.25; /* apagado */
+}
+.red-light    { background: #e53935; }
+.yellow-light { background: #fdd835; }
+.green-light  { background: #43a047; }
+
+/* clase para encender una luz desde el js: luz.classList.add('on') */
+.traffic-light .on { opacity: 1; }
+
+.controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.controls button {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.counter-container {
+  width: 100%;
+  max-width: 640px;
+  padding: 20px 28px;
+  background: #fff;
+  border: 2px solid #1d2733;
+  border-radius: 12px;
+}
+
+.counter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.circle { width: 22px; height: 22px; border-radius: 50%; }
+.circle.red    { background: #e53935; }
+.circle.yellow { background: #fdd835; }
+.circle.green  { background: #43a047; }
+
