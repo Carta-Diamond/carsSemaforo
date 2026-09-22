@@ -3,6 +3,7 @@ const button = document.getElementById('btnAutomatico');
 const rojo = document.getElementById('red-light');
 const amarillo = document.getElementById('yellow-light');
 const verde = document.getElementById('green-light');
+const btnDetener = document.getElementById('btnDetener');
 const colores =[verde, amarillo, rojo];
 let actual= 0;
 let temp;
@@ -22,8 +23,16 @@ function cambiarColor() {
     mostrarColor();
 }
 button.addEventListener('click', function() {
-    temp=setInterval(cambiarColor, 1000);
+    if (temp) {
+        clearInterval(temp);
+    }
+    temp = setInterval(cambiarColor, 1000);
 });
+btnDetener.addEventListener('click', function() {
+    clearInterval(temp);
+    temp = undefined;
+});
+
 
 const btnRojo = document.getElementById("red");
 const btnAmarillo = document.getElementById("yellow");
