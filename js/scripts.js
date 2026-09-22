@@ -3,6 +3,10 @@ const btnAmarillo = document.getElementById("yellow");
 const btnVerde = document.getElementById("green");
 const btnApagar = document.getElementById("off");
 
+let rCount = 0
+let yCount = 0
+let gCount = 0
+
 
 function encenderColor(color){
     if (color.id === "off"){
@@ -34,23 +38,29 @@ function encenderColor(color){
 btnRojo.addEventListener("click", function(){
 
     const color = document.getElementById("red-light")
-    encenderColor(color)
+    const redCount = document.getElementById("redCount")
+    encenderColor(color);
+    redCount.textContent = rCount++;
+
     return;
 });
 
 btnAmarillo.addEventListener("click", function(){
 
     const color = document.getElementById("yellow-light")
+    const yellowCount= document.getElementById("yellowCount")
     encenderColor(color)
+    yellowCount.textContent = yCount++;
     return;
+
 });
 
 btnVerde.addEventListener("click", function(){
 
     const color = document.getElementById("green-light")
+    const greenCount= document.getElementById("greenCount")
     encenderColor(color)
-    let contador = document.getElementById("redCount")
-    contador +=1
+    greenCount.textContent = gCount++;
     return;
 });
 
