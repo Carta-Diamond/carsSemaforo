@@ -66,41 +66,27 @@ function encenderColor(color){
 }
 
 btnRojo.addEventListener("click", function(){
-
-    const color = document.getElementById("red-light")
     const redCount = document.getElementById("redCount")
-    encenderColor(color);
-    redCount.textContent = ++rCount + (rCount === 1 ? " vez" : " veces");;
-    return;
-
+    encenderColor(rojo);
+    redCount.textContent = ++rCount + (rCount === 1 ? " vez" : " veces");
 });
 
 btnAmarillo.addEventListener("click", function(){
-
-    const color = document.getElementById("yellow-light")
     const yellowCount= document.getElementById("yellowCount")
-    encenderColor(color)
-    yellowCount.textContent = ++yCount + (yCount === 1 ? " vez" : " veces");;
-    return;
-
+    encenderColor(amarillo)
+    yellowCount.textContent = ++yCount + (yCount === 1 ? " vez" : " veces");
 });
 
 btnVerde.addEventListener("click", function(){
-
-    const color = document.getElementById("green-light")
     const greenCount= document.getElementById("greenCount")
-    encenderColor(color)
-    greenCount.textContent = ++gCount + (gCount === 1 ? " vez" : " veces");;
-    return;
-
+    encenderColor(verde)
+    greenCount.textContent = ++gCount + (gCount === 1 ? " vez" : " veces");
 });
 
 btnApagar.addEventListener("click", function(){
-
     const color = document.getElementById("off")
     encenderColor(color)
     return;
-    
 })
 
 
