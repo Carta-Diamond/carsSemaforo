@@ -77,24 +77,64 @@ h2 {
 .traffic-light {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 16px;
-  background: #222;
-  border-radius: 18px;
+  gap: 14px;
+  padding: 18px;
+  background: linear-gradient(145deg, #2b2b2b, #171717);
+  border-radius: 20px;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(255, 255, 255, 0.08);
 }
 
 .red-light, .yellow-light, .green-light {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  opacity: 0.25; /* apagado */
+  opacity: 0.35;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.5);
 }
-.red-light    { background: #e53935; }
-.yellow-light { background: #fdd835; }
-.green-light  { background: #43a047; }
 
-/* clase para encender una luz desde el js: luz.classList.add('on') */
-.traffic-light .on { opacity: 1; }
+.red-light    { background: radial-gradient(circle at 35% 30%, #ff7b6f, #e53935 60%, #8f1f1a); }
+.yellow-light { background: radial-gradient(circle at 35% 30%, #fff0a0, #fdd835 60%, #a88900); }
+.green-light  { background: radial-gradient(circle at 35% 30%, #7fe38a, #43a047 60%, #205024); }
+
+.traffic-light .on {
+  opacity: 1;
+  filter: brightness(1.15);
+}
+
+.red-light.on {
+  box-shadow:
+    0 0 15px 6px rgba(229, 57, 53, 0.85),
+    0 0 40px 14px rgba(229, 57, 53, 0.45),
+    inset 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.yellow-light.on {
+  box-shadow:
+    0 0 15px 6px rgba(253, 216, 53, 0.85),
+    0 0 40px 14px rgba(253, 216, 53, 0.45),
+    inset 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.green-light.on {
+  box-shadow:
+    0 0 15px 6px rgba(67, 160, 71, 0.85),
+    0 0 40px 14px rgba(67, 160, 71, 0.45),
+    inset 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* pulso al encender */
+@keyframes glowPulse {
+  0%   { filter: brightness(1); }
+  50%  { filter: brightness(1.3); }
+  100% { filter: brightness(1.15); }
+}
+
+.traffic-light .on {
+  animation: glowPulse 0.4s ease-out;
+}
 
 .controls {
   flex: 1;
